@@ -21,3 +21,11 @@ CREATE TABLE transportation(
 	  REFERENCES politician(politician_id)
 	  ON DELETE CASCADE
 );
+
+-- I can make complex SQL queries like this to display on website... 
+
+SELECT politician.politician_id, politician.website, transportation.info_or_not
+FROM politician, transportation
+WHERE politician.politician_id = transportation.politician_id and transportation.info_or_not = 'Pro Transit' and politician.state = 'Washington';
+
+-- This basically shows all politician's who mention Public Transportation for the state of Washington. 
